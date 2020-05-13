@@ -27,10 +27,17 @@ end)
 
 exports('CadIsPlayerLinked', cadApiIdExists)
 
+
 RegisterCommand("apiid", function(source, args, rawCommand)
+  
     local identifiers = GetIdentifiers(source)
     if identifiers[Config.primaryIdentifier] ~= nil then
+      if pluginConfig.clipboard == true then
+        io.popen('clip','w'):write(tostring(identifiers[Config.primaryIdentifier])):close()
+        print("Your API ID: "..tostring(identifiers[Config.primaryIdentifier]).. " and has been saved to your clipboard")
+      else
         print("Your API ID: "..tostring(identifiers[Config.primaryIdentifier]))
+      end
     else
         print("API ID not found")
     end

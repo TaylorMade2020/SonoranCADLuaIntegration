@@ -12,7 +12,7 @@ local config = {
     requiresPlugins = {}, -- required plugins for this plugin to work, separated by commas
 
     -- put your configuration options below
-    myConfigOption = "value"
+    clipboard = "false"
 }
 
 -- IMPORTANT: UNCOMMENT THE BELOW LINE ON ACTUAL PLUGINS!
